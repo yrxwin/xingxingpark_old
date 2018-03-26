@@ -9,6 +9,8 @@
 
 #### 实例演算
 此处我们只贴出了前三步的过程 (图中m对应mapping)，后两步与此类似。
+<!-- 图片可以直接在blogspot中加入,那样比较方便 -->
+![猩猩的演算板](https://4.bp.blogspot.com/-R-A4aX7MNGY/Wrh019n0eDI/AAAAAAAAABQ/poVwhI7S8Lc6TpME1ISAAIA45zThOWtIQCEwYBhgL/s640/IMG_3069.jpg)
 
 #### 示例代码
 
