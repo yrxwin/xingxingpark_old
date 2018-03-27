@@ -10,7 +10,7 @@
 #### 实例演算
 
 
-#### 示例代码
+#### 示例代码(CPP)
 
 ```cpp
 class Solution {
@@ -31,6 +31,27 @@ public:
         return rets;
     }
 };
+```
+
+#### 示例代码(PYTHON)
+
+```python
+class Solution(object):
+    def dailyTemperatures(self, temperatures):
+        """
+        :type temperatures: List[int]
+        :rtype: List[int]
+        """
+        # 使用List代替stack
+        stack = list()
+        res = [0 for  i in range(len(temperatures))]
+        for i in range(len(temperatures)):
+            while(len(stack) > 0 and temperatures[i] > temperatures[stack[-1]]):
+                res[stack[-1]] = i - stack[-1];
+                stack.pop()
+            # append等效为stack中的push
+            stack.append(i)
+        return res
 ```
 #### 复杂度分析
 因为每个字符`push`和`pop`都是最多一次，所以：
