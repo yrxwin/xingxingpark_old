@@ -35,7 +35,7 @@ class Solution:
         """
         low, high = 0, len(nums) - 1
         while low < high:
-            mid = int((low + high) / 2)
+            mid = int(low + (high - low) / 2)
             if nums[mid]>nums[mid+1]:
                 high = mid
             else:
@@ -50,8 +50,8 @@ public:
         int low = 0; 
         int high = nums.size() - 1;
         while (low + 1 < high) {
-            int mid = (low + high) / 2;
-            if (nums[mid] < nums[mid+1]) 
+            int mid = low + (high - low) / 2;
+            if (nums[mid] < nums[mid + 1]) 
                 low = mid;
             else
                 high = mid;
