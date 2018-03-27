@@ -33,9 +33,9 @@ class Solution:
         :type nums: List[int]
         :rtype: int
         """
-        low, high = 0, len(nums)-1
+        low, high = 0, len(nums) - 1
         while low < high:
-            mid = int((low+high)/2)
+            mid = int((low + high) / 2)
             if nums[mid]>nums[mid+1]:
                 high = mid
             else:
@@ -46,17 +46,17 @@ class Solution:
 ```c++
 class Solution {
 public:
-    int findPeakElement(const vector<int> &num) {
+    int findPeakElement(const vector<int>& nums) {
         int low = 0; 
-        int high = num.size() - 1;
+        int high = nums.size() - 1;
         while (low + 1 < high) {
             int mid = (low + high) / 2;
-            if (num[mid] < num[mid + 1]) 
+            if (nums[mid] < nums[mid+1]) 
                 low = mid;
             else
                 high = mid;
         }
-        return num[low] > num[high] ? low : high;
+        return nums[low] > nums[high] ? low : high;
     }
 };
 ```
