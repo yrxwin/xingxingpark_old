@@ -12,7 +12,7 @@
 <!-- 图片可以直接在blogspot中加入,那样比较方便 -->
 ![猩猩的演算板](https://4.bp.blogspot.com/-R-A4aX7MNGY/Wrh019n0eDI/AAAAAAAAABQ/poVwhI7S8Lc6TpME1ISAAIA45zThOWtIQCEwYBhgL/s640/IMG_3069.jpg)
 
-#### 示例代码
+#### 示例代码(CPP)
 
 ```cpp
 class Solution {
@@ -39,6 +39,33 @@ public:
         return ret;
     }
 };
+```
+
+#### 示例代码(PYTHON)
+
+```python
+from collections import Counter
+class Solution(object):
+    def removeDuplicateLetters(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        map = Counter()
+        stack = list()
+        visited = set()
+        for c in s:
+            map[c] += 1
+        for c in s:
+            map[c] -= 1;
+            if c in visited: continue
+            else: visited.add(c)
+            while(len(stack) > 0 and c < stack[-1] and map[stack[-1]] > 0):
+                visited.remove(stack[-1])
+                stack.pop()
+            stack.append(c)
+            visited.add(c)
+        return ''.join(stack)
 ```
 #### 复杂度分析
 因为每个字符插入和pop出ret都是最多一次，所以：
